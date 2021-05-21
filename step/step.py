@@ -46,18 +46,16 @@ lbox=Listbox(win,width=20,height=len(foto_list),selectmode=SINGLE)
 for element in foto_list:
     lbox.insert(END,element)
 
-lbox.pack()
+lbox.grid()
 lbox.bind("<<ListboxSelect>>",list_to_txt)
 txt=Text(win,height=5,width=30,wrap=WORD)
-txt.pack()
+txt.grid(row=2)
 txt.bind("<Return>",txt_to_list)
-can=Canvas(win,width=200,height=200,bg="blue")
+can=Canvas(win,width=200,height=200,bg="white")
 pc = PhotoImage(file="")#220px-PelobatesFuscus.png
-panel = Label(win, image = pc)
-panel.pack(side = "bottom", fill = "both", expand = "yes")
 foto=PhotoImage(file="12.png")
-bt=Button(text='Info', command=opisanie).pack()#, command=op
+bt=Button(text='CARS', command=opisanie).grid(row=1, column=8)#, command=op
 opis=Label(win, text="", width=110, height=20)
-opis.pack()
-can.pack()
+opis.grid(row=1, column=1)
+can.grid(row=1, column=15)
 win.mainloop()
